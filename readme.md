@@ -23,7 +23,7 @@ because we use [flow](https://flow.org) features, you need `babel-eslint` as the
 
 ## rules
 
-**whitespace-after-imports**
+### whitespace-after-imports
 
 * `--fix`able
 
@@ -44,4 +44,23 @@ To require a princely 5 lines, use the config option, like so
     "spacedout/whitespace-after-imports": [2, {"lines": 5}]
   }
 }
+```
+
+running that rule with `eslint --fix` will change the following code
+```javascript
+import foo from 'foo';
+
+export const baz = () => {};
+```
+
+to this, which you could probably drive a cadillac through
+
+```diff
+ import foo from 'foo';
+
++
++
++
++
+ export const baz = () => {};
 ```
